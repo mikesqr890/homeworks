@@ -1,0 +1,138 @@
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.form-section,
+.stack-section {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  width: 35%;
+}
+
+.stack-section {
+  width: 65%;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #646cff;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+.remove-button {
+  width: 100%;
+  margin-top: 12px;
+  background-color: #d9534f;
+}
+
+.remove-button:hover {
+  background-color: #c9302c;
+}
+
+.remove-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book {
+  position: relative;
+  padding: 18px;
+  border: 2px solid #646cff;
+  border-radius: 8px;
+  background-color: #f8f8ff;
+}
+
+.book h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.book p {
+  margin: 5px 0;
+}
+
+.top-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  background-color: #646cff;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.empty {
+  text-align: center;
+  color: #777;
+  padding: 30px;
+}
+
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .form-section,
+  .stack-section {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
