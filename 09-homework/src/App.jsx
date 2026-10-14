@@ -2,10 +2,7 @@ import { useState } from 'react'
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
-/* =========================================================
-   1. N-ary tree
-   Every node has: title, link, component and a children list
-   ========================================================= */
+
 class TreeNode {
   constructor(title, link, component) {
     this.title = title
@@ -14,21 +11,18 @@ class TreeNode {
     this.children = []
   }
 
-  // Adds a child to this node and returns it (handy to chain submenus)
+
   addChild(node) {
     this.children.push(node)
     return node
   }
 
-  // DFS: returns every node of the tree in a flat array (used to create the routes)
   flatten() {
     return [this, ...this.children.flatMap((child) => child.flatten())]
   }
 }
 
-/* =========================================================
-   2. Components that every menu item will render
-   ========================================================= */
+
 const Page = ({ title, text }) => (
   <>
     <h1>{title}</h1>
@@ -56,9 +50,7 @@ const Ticket = () => <Page title="Submit a Ticket" text="Tell us your problem." 
 const Network = () => <Page title="Network Status" text="All systems operational." />
 const Logout = () => <Page title="Logout" text="See you soon!" />
 
-/* =========================================================
-   3. Building the tree (root is invisible, only holds menus)
-   ========================================================= */
+
 const buildMenuTree = () => {
   const root = new TreeNode('Root', '/', null)
 
@@ -84,13 +76,11 @@ const buildMenuTree = () => {
 
 const menuTree = buildMenuTree()
 
-/* =========================================================
-   4. Sidebar: prints the tree recursively (DFS)
-   ========================================================= */
+
 const MenuItem = ({ node, depth }) => {
   const { pathname } = useLocation()
   const isGroup = node.children.length > 0
-  // A group starts open if the current URL is inside it
+
   const [open, setOpen] = useState(pathname.startsWith(node.link + '/'))
 
   const indent = { paddingLeft: 16 + depth * 16 }
@@ -142,11 +132,9 @@ const Sidebar = ({ tree }) => (
   </nav>
 )
 
-/* =========================================================
-   5. App: one <Route> per node of the tree
-   ========================================================= */
+
 function App() {
-  // root.flatten()[0] is the invisible root, we skip it
+
   const nodes = menuTree.flatten().slice(1)
 
   return (
