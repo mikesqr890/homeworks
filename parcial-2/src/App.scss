@@ -1,0 +1,358 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+  color: #f8fafc;
+  background: #101020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background: #101020;
+  --surface: #191932;
+  --surface-hover: #25254a;
+  --primary: #8b5cf6;
+  --primary-hover: #a78bfa;
+  --secondary: #2563eb;
+  --cyan: #22d3ee;
+  --orange: #fb923c;
+  --text: #f8fafc;
+  --muted: #a5b4cf;
+  --border: #35355a;
+  --danger: #fb475e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top left, #3b176a 0%, transparent 38%),
+    radial-gradient(ellipse at bottom right, #092d59 0%, transparent 35%),
+    var(--background);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+/* LOGIN Y REGISTRO */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 20px 70px #00000055;
+}
+
+.auth-card h1 {
+  margin: 0 0 30px;
+  color: var(--cyan);
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.auth-card h2 {
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 24px;
+}
+
+.auth-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.auth-card label {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 13px;
+  color: var(--text);
+  background: #101020;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+}
+
+.auth-card input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px #22d3ee22;
+}
+
+.auth-card input::placeholder {
+  color: #777c9e;
+}
+
+.auth-card form button {
+  margin-top: 10px;
+  padding: 13px;
+  color: white;
+  background: linear-gradient(100deg, #7c3aed, #2563eb);
+  border: none;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.auth-card form button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.auth-card a {
+  color: var(--cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-card a:hover {
+  color: var(--orange);
+}
+
+.error {
+  color: #ff697d;
+  font-size: 14px;
+}
+
+/* GESTOR DE ARCHIVOS */
+
+.files-container {
+  width: min(1100px, calc(100% - 40px));
+  margin: 36px auto;
+}
+
+.files-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 28px;
+  background: linear-gradient(120deg, #241747, #172554);
+  border: 1px solid #514080;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px #00000033;
+}
+
+.files-header h1 {
+  margin: 0;
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.files-header p {
+  margin: 9px 0 0;
+  color: #c4b5fd;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.files-header > button {
+  padding: 11px 16px;
+  color: white;
+  background: #312e5a;
+  border: 1px solid #6254a0;
+  border-radius: 9px;
+}
+
+.files-header > button:hover {
+  background: #493a83;
+}
+
+/* BOTONES PRINCIPALES */
+
+.files-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.files-actions button {
+  padding: 13px 18px;
+  color: white;
+  background: linear-gradient(110deg, #7c3aed, #4f46e5);
+  border: 1px solid #9b7bff;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 5px 18px #7c3aed33;
+}
+
+.files-actions button:first-child {
+  background: linear-gradient(110deg, #7c3aed, #a21caf);
+}
+
+.files-actions button:nth-child(2) {
+  background: linear-gradient(110deg, #0369a1, #2563eb);
+  border-color: #38bdf8;
+}
+
+.files-actions button:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+/* CONTENIDO DE LAS CARPETAS */
+
+.folder-content {
+  min-height: 280px;
+  padding: 28px;
+  background: #17172e;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 10px 35px #00000022;
+}
+
+.folder-content h2 {
+  margin: 0 0 23px;
+  padding-bottom: 18px;
+  color: var(--cyan);
+  border-bottom: 1px solid var(--border);
+  font-size: 21px;
+}
+
+.folder-content > p {
+  color: var(--muted);
+}
+
+/* TARJETAS DE ARCHIVOS Y CARPETAS */
+
+.file-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  background: #20203e;
+  border: 1px solid #38385f;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #00000015;
+}
+
+.file-item:hover {
+  background: #2a2850;
+  border-color: var(--primary);
+  box-shadow: 0 0 20px #8b5cf622;
+  transform: translateY(-2px);
+}
+
+.file-name {
+  min-width: 0;
+  padding: 5px 0;
+  overflow-wrap: anywhere;
+  color: #e9e7ff;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.file-name:disabled {
+  color: #e9e7ff;
+}
+
+/* BOTÓN ELIMINAR */
+
+.delete-button {
+  flex-shrink: 0;
+  padding: 8px 10px;
+  color: #ff8796;
+  background: #421e35;
+  border: 1px solid #85344f;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.delete-button:hover {
+  color: white;
+  background: #c02648;
+  border-color: #fb475e;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 600px) {
+  .files-container {
+    width: calc(100% - 24px);
+    margin: 12px auto;
+  }
+
+  .files-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .files-header h1 {
+    font-size: 23px;
+  }
+
+  .files-actions {
+    gap: 9px;
+  }
+
+  .files-actions button {
+    flex: 1 1 auto;
+  }
+
+  .folder-content {
+    padding: 18px;
+  }
+
+  .file-list {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 25px;
+  }
+}
