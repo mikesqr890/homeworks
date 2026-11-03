@@ -2,7 +2,6 @@ import { useState } from "react";
 import Trie from "./Trie";
 import "./App.css";
 
-// Productos de ejemplo (los del enunciado + algunos más)
 function createInitialTrie() {
   const t = new Trie();
   t.insert("air max", 90);
@@ -17,14 +16,14 @@ function createInitialTrie() {
 
 function App() {
   const [trie] = useState(createInitialTrie);
-  const [version, setVersion] = useState(0); // fuerza re-render al insertar
+  const [version, setVersion] = useState(0); 
   const [message, setMessage] = useState("");
 
-  // formulario de inserción
+  
   const [name, setName] = useState("");
   const [popularity, setPopularity] = useState("");
 
-  // búsqueda
+  
   const [prefix, setPrefix] = useState("air");
   const [k, setK] = useState(2);
 
@@ -42,11 +41,10 @@ function App() {
     setPopularity("");
   };
 
-  // Resultados (se recalculan en cada render, el Trie es pequeño)
+  
   const topK = trie.searchTopK(prefix, Number(k));
   const totalMatches = trie.searchByPrefix(prefix).length;
 
-  // Listado completo (prefijo vacío = todos), ordenado por popularidad
   const allProducts = trie
     .searchByPrefix("")
     .sort((a, b) => b.popularity - a.popularity || a.name.localeCompare(b.name));
