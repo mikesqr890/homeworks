@@ -1,0 +1,123 @@
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+}
+
+.layout {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #8884;
+  border-radius: 8px;
+}
+
+.results {
+  flex: 2 1 400px;
+}
+
+.card h3 {
+  margin: 0 0 0.3rem;
+}
+
+.card input {
+  padding: 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #8886;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row > input {
+  flex: 1;
+  min-width: 160px;
+}
+
+.k-input {
+  width: 70px;
+  margin-left: 0.4rem;
+}
+
+.message,
+.hint {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+ol li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.product-name {
+  flex: 0 0 160px;
+  font-weight: 600;
+}
+
+.bar-wrap {
+  flex: 1;
+  height: 10px;
+  background: #8883;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: #3d85c6;
+}
+
+.pop {
+  width: 32px;
+  text-align: right;
+}
+.all-products {
+  margin-top: 1rem;
+}
+
+.all-products ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 0.35em 0.9em;
+  background: transparent;
+}
+
+.chip strong {
+  margin-left: 0.4rem;
+  color: #3d85c6;
+}
