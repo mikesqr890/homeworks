@@ -1,0 +1,145 @@
+
+.location-page {
+  padding-top: 60px;
+  padding-bottom: 90px;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.location-header > span {
+  font-size: 12px;
+  color: #9b8061;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.location-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 50px);
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.location-header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #81786f;
+  line-height: 1.8;
+}
+
+.location-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}
+
+.location-map {
+  min-height: 470px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee9e1;
+  border: 1px solid #e7dfd6;
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+  border: none;
+}
+
+.location-details {
+  padding: 35px;
+  background: #f2ede7;
+  border: 1px solid #e8dfd5;
+  border-radius: 12px;
+}
+
+.location-details > span {
+  color: #9b8061;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.location-details h2 {
+  margin: 14px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+}
+
+.location-details > p {
+  color: #81786f;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.location-detail {
+  padding: 18px 0;
+  border-top: 1px solid #dfd4c8;
+}
+
+.location-detail strong {
+  font-size: 14px;
+}
+
+.location-detail p {
+  margin-top: 8px;
+  color: #81786f;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.location-note {
+  font-size: 12px;
+  color: #866a47;
+}
+
+.location-button,
+.location-outfit-link {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 7px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.location-button {
+  background: #292621;
+  color: white;
+}
+
+.location-button:hover {
+  background: #9b8061;
+}
+
+.location-outfit-link {
+  border: 1px solid #292621;
+  color: #292621;
+  background: transparent;
+}
+
+.location-outfit-link:hover {
+  background: #e5dacf;
+}
+
+@media (max-width: 800px) {
+  .location-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .location-details {
+    padding: 25px;
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 350px;
+  }
+}

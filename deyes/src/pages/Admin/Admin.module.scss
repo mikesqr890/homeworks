@@ -1,0 +1,271 @@
+
+.admin {
+  min-height: 100vh;
+  background: #faf8f4;
+  color: #292621;
+}
+
+.header {
+  background: white;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  button {
+    border: 1px solid #ddd4c8;
+    background: white;
+    padding: 10px 15px;
+  }
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.heading {
+  padding: 55px 7% 30px;
+
+  span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #927b5f;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin: 12px 0;
+  }
+
+  p {
+    color: #777;
+  }
+}
+
+.stats {
+  padding: 0 7% 35px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  article {
+    background: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    strong {
+      font-size: 30px;
+    }
+  }
+}
+
+.formSection,
+.tableSection {
+  margin: 0 7% 35px;
+  padding: 30px;
+  background: white;
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 25px;
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd7cd;
+    background: white;
+    font: inherit;
+  }
+
+  small {
+    color: #777;
+  }
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  grid-column: 1 / -1;
+  font-size: 14px;
+}
+
+.actions,
+.rowActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions {
+  grid-column: 1 / -1;
+
+  button {
+    padding: 13px 22px;
+    border: none;
+    background: #292621;
+    color: white;
+  }
+
+  button:disabled {
+    opacity: .6;
+  }
+
+  .cancel {
+    background: #e9e4dc;
+    color: #292621;
+  }
+}
+
+.error {
+  grid-column: 1 / -1;
+  color: #c0392b;
+}
+
+.success {
+  grid-column: 1 / -1;
+  color: #21834a;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 650px;
+  }
+
+  th,
+  td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eeeae4;
+  }
+
+  th {
+    font-size: 13px;
+    color: #777;
+  }
+
+  td {
+    font-size: 14px;
+  }
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    width: 48px;
+    height: 55px;
+    object-fit: cover;
+  }
+}
+
+.active,
+.inactive {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.active {
+  background: #e7f3e9;
+  color: #28733b;
+}
+
+.inactive {
+  background: #f4e8e6;
+  color: #a33d35;
+}
+
+.rowActions {
+  button {
+    padding: 8px 12px;
+    border: none;
+    background: #eee9e1;
+  }
+
+  .delete {
+    background: #f7e5e2;
+    color: #a33d35;
+  }
+}
+
+.loading {
+  padding: 40px;
+}
+
+@media (max-width: 700px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .full,
+  .checkbox,
+  .actions,
+  .error,
+  .success {
+    grid-column: 1;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .formSection,
+  .tableSection {
+    padding: 20px;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
