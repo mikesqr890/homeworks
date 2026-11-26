@@ -1,0 +1,297 @@
+
+// Variables
+$primary: #1ed760;
+$background: #121212;
+$panel: #181818;
+$surface: #282828;
+$text: #ffffff;
+$secondary-text: #b3b3b3;
+$radius: 12px;
+
+// Mixins reutilizables
+@mixin panel-style {
+  background: $panel;
+  border-radius: $radius;
+  padding: 24px;
+  border: 1px solid $surface;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-style {
+  background: $primary;
+  color: $background;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: #45e77e;
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background: $background;
+  color: $text;
+
+  .header {
+    padding: 28px 5%;
+    background: #0a0a0a;
+    border-bottom: 1px solid $surface;
+
+    h1 {
+      color: $primary;
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: $secondary-text;
+      font-size: 14px;
+    }
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    gap: 20px;
+    max-width: 1400px;
+    padding: 30px;
+    margin: auto;
+  }
+
+  .panel {
+    @include panel-style;
+
+    h2 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    h4 {
+      margin: 20px 0 12px;
+    }
+
+    p {
+      color: $secondary-text;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .tag {
+      display: inline-block;
+      color: $primary;
+      background: rgba(30, 215, 96, 0.1);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+  }
+
+  input,
+  select {
+    width: 100%;
+    background: $surface;
+    color: $text;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: $primary;
+    }
+
+    &::placeholder {
+      color: $secondary-text;
+    }
+  }
+
+  button {
+    @include button-style;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .search-box {
+    display: flex;
+    gap: 10px;
+  }
+
+  .suggestions {
+    margin-top: 15px;
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .suggestion {
+      background: $surface;
+      padding: 13px;
+      margin-bottom: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary;
+        background: #333333;
+      }
+    }
+  }
+
+  .message {
+    color: $primary !important;
+    margin-top: 15px;
+  }
+
+  .ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .song {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px;
+      border-radius: 8px;
+
+      &:hover {
+        background: $surface;
+      }
+
+      .position {
+        color: $secondary-text;
+        min-width: 20px;
+        text-align: center;
+      }
+
+      .song-info {
+        flex: 1;
+        cursor: pointer;
+
+        h3 {
+          font-size: 15px;
+          margin-bottom: 5px;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        p {
+          font-size: 13px;
+        }
+      }
+
+      .plays {
+        color: $secondary-text;
+        font-size: 12px;
+      }
+
+      .play-button {
+        @include flex-center;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .cover {
+    @include flex-center;
+    width: 45px;
+    height: 45px;
+    background: $surface;
+    color: $primary;
+    font-size: 25px;
+    border-radius: 7px;
+    flex-shrink: 0;
+  }
+
+  .selected-song {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: $surface;
+    border-radius: 8px;
+    padding: 15px;
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .recommendation {
+    background: $surface;
+    padding: 14px;
+    margin-bottom: 8px;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+      background: #333333;
+    }
+  }
+
+  footer {
+    text-align: center;
+    color: $secondary-text;
+    font-size: 13px;
+    padding: 25px;
+    border-top: 1px solid $surface;
+  }
+}
+
+// Diseño adaptable
+@media (max-width: 900px) {
+  .app {
+    .dashboard {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .app {
+    .panel {
+      padding: 16px;
+    }
+
+    .search-box {
+      flex-direction: column;
+    }
+
+    .ranking {
+      .song {
+        gap: 8px;
+
+        .plays {
+          font-size: 10px;
+          max-width: 70px;
+        }
+      }
+    }
+  }
+}
